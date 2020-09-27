@@ -6,9 +6,24 @@ namespace LineComparision
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Welcome to Line Comparision problem in Master Branch");
+            Console.WriteLine("Enter 1 to find length \nEnter 2 to find equal or not \nEnter 3 to do comparision");
+            int key = Convert.ToInt32(Console.ReadLine());
+            switch(key)
+            {
+                case 1:
+                    LineComparision.Program.CalculateLength();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid key. Try once more");
+                    LineComparision.Program.Main();
+                    break;
+            }
+        }
+        static void CalculateLength()
+        {
             Console.WriteLine("Enter x1 ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter x2 ");
