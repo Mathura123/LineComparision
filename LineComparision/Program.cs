@@ -8,6 +8,7 @@ namespace LineComparision
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Line Comparision problem in Master Branch");
             Console.WriteLine("Enter x1 ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter x2 ");
