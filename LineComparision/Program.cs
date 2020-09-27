@@ -8,6 +8,10 @@ namespace LineComparision
     {
         static void Main(string[] args)
         {
+            LineComparision.Program.EqualOrNot();
+        }
+        static void EqualOrNot()
+        {
             Console.WriteLine("Enter x1 for first line ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter x2 for first line ");
@@ -17,7 +21,7 @@ namespace LineComparision
             Console.WriteLine("Enter y2 for first line ");
             double y2 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter x1 for second line ");
+            Console.WriteLine("\nEnter x1 for second line ");
             double x12 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter x2 for second line ");
             double x22 = Convert.ToDouble(Console.ReadLine());
@@ -27,7 +31,7 @@ namespace LineComparision
             double y22 = Convert.ToDouble(Console.ReadLine());
             double lineLength1 = LineComparision.Program.CalLength(x1, x2, y1, y2);
             double lineLength2 = LineComparision.Program.CalLength(x12, x22, y12, y22);
-            if(lineLength1==lineLength2)
+            if (lineLength1 == lineLength2)
             {
                 Console.WriteLine("Both Lines are equal in length");
             }
