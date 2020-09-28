@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Dynamic;
-using System.Numerics;
 
 namespace LineComparision
 {
@@ -19,13 +17,16 @@ namespace LineComparision
                 case 2:
                     LineComparision.Program.EqualOrNot();
                     break;
+                case 3:
+                    LineComparision.Program.CompareLines();
+                    break;
                 default:
                     Console.WriteLine("Not a valid key. Try once more");
                     LineComparision.Program.Main();
                     break;
             }
         }
-        static void CalculateLength()
+        static double CallingMethod()
         {
             Console.WriteLine("Enter x1");
             double x1 = Convert.ToDouble(Console.ReadLine());
@@ -35,31 +36,21 @@ namespace LineComparision
             double y1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter y2");
             double y2 = Convert.ToDouble(Console.ReadLine());
-            double Len = LineComparision.Program.CalLength(x1, x2, y1, y2);
-            Console.WriteLine("Line Length is "+ Len);
+            double lineLength = LineComparision.Program.CalLength(x1, x2, y1, y2); 
+            return lineLength;
+        }
+        static void CalculateLength()
+        {
+            double len = LineComparision.Program.CallingMethod();
+            Console.WriteLine("Line Length is "+ len);
         }
         static void EqualOrNot()
         {
-            Console.WriteLine("Enter x1 for first line ");
-            double x1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter x2 for first line ");
-            double x2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter y1 for first line ");
-            double y1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter y2 for first line ");
-            double y2 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("\nEnter x1 for second line ");
-            double x12 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter x2 for second line ");
-            double x22 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter y1 for second line ");
-            double y12 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter y2 for second line ");
-            double y22 = Convert.ToDouble(Console.ReadLine());
-            double lineLength1 = LineComparision.Program.CalLength(x1, x2, y1, y2);
-            double lineLength2 = LineComparision.Program.CalLength(x12, x22, y12, y22);
-            if (lineLength1 == lineLength2)
+            Console.WriteLine("Enter Values for first line ");
+            double len1 = LineComparision.Program.CallingMethod();
+            Console.WriteLine("\nEnter Values for second line ");
+            double len2 = LineComparision.Program.CallingMethod();
+            if (len1 == len2)
             {
                 Console.WriteLine("Both Lines are equal in length");
             }
@@ -68,10 +59,30 @@ namespace LineComparision
                 Console.WriteLine("Both Lines are not equal in length");
             }
         }
-        static double CalLength(double x1,double x2,double y1,double y2)
+        static void CompareLines()
         {
-            double length = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
-            return length;
+            Console.WriteLine("Enter Values for first line ");
+            double len1 = LineComparision.Program.CallingMethod();
+            Console.WriteLine("\nEnter Values for second line ");
+            double len2 = LineComparision.Program.CallingMethod();
+            if (len1>len2)
+            {
+                Console.WriteLine("First Line has more length");
+            }
+            else if(len1>len2)
+            {
+                Console.WriteLine("Second Line has more length");
+            }
+            else
+            {
+                Console.WriteLine("Both are equal");
+            }
+
+        }
+        static double CalLength(double x1, double x2,double y1, double y2)
+        {
+            double Length = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 -y1), 2));
+            return Length;
         }
     }
 }
