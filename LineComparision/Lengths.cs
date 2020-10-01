@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LineComparision
 {
-    class CompareLen
+    class Lengths
     {
         public static double CalculateLength()
         {
@@ -24,22 +24,21 @@ namespace LineComparision
         public static void CompareLines()
         {
             Console.WriteLine("Enter Values for first line ");
-            double len1 = LineComparision.CompareLen.CalculateLength();
+            double len1 = LineComparision.Lengths.CalculateLength();
             Console.WriteLine("\nEnter Values for second line ");
-            double len2 = LineComparision.CompareLen.CalculateLength();
+            double len2 = LineComparision.Lengths.CalculateLength();
             if (len1.CompareTo(len2) > 0)
             {
-                Console.WriteLine("First Line has more length");
+                Console.WriteLine("\nFirst Line has more length");
             }
             else if (len1.CompareTo(len2) < 0)
             {
-                Console.WriteLine("Second Line has more length");
+                Console.WriteLine("\nSecond Line has more length");
             }
             else
             {
                 Console.WriteLine("Both are equal");
             }
-
         }
 
     }

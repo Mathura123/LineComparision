@@ -12,7 +12,7 @@ namespace LineComparision
             switch(key)
             {
                 case 1:
-                    LineComparision.CompareLen.CompareLines();
+                    LineComparision.Lengths.CompareLines();
                     break;
                 default:
                     Console.WriteLine("Not a valid key. Try once more");
